@@ -15,10 +15,7 @@ git clone "https://github.com/isabelaalonso9/quake-3-arena.git"
 ### You should have [Node.js](https://nodejs.org/en/download/) installed on your computer, because for this project the language used was JavaScript with Node.js (I used the 14.18.1 version).
 
 ### After that, open the project on [Visual Studio Code](https://code.visualstudio.com/download).
-### To install the dependencies, access the Visual Studio Code Terminal, use the command:
-```
- npm install
- ```
+
 ### To execute the project, open the Visual Studio Code Terminal and type the command:
 ```
 node index.js
