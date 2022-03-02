@@ -9,7 +9,7 @@
 ---
 ### First, you should clone the project in your computer using Git Bash command:
 ```
-git clone "https://"
+git clone "https://github.com/isabelaalonso9/quake-3-arena.git"
 ```
 
 ### You should have [Node.js](https://nodejs.org/en/download/) installed on your computer, because for this project the language used was JavaScript with Node.js (I used the 14.18.1 version).
