@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "test": "jest ./test/organizeAndOutput.test.js",
+        "coverage": "jest --coverage"
+    },
+    "devDependencies": {
+        "jest": "^27.5.1"
+    }
+}
