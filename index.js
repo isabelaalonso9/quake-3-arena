@@ -59,18 +59,32 @@ fs.readdir(directoryPath, function (err, files) {
 
             if (player.includes("<world>")) {
               if (
-                killsPerPlayer[deadPlayer] !== undefined &&
+                killsPerPlayer[deadPlayer] !== undefined ||
                 killsPerPlayer[deadPlayer] > 0
               ) {
                 killsPerPlayer[deadPlayer] = killsPerPlayer[deadPlayer] - 1;
+                if (killsPerPlayer[deadPlayer] <= 0)
+                  killsPerPlayer[deadPlayer] = 0
               } else {
                 killsPerPlayer[deadPlayer] = 0;
+                players.push(deadPlayer)
               }
+              
             } else if (killsPerPlayer[player] !== undefined) {
-              killsPerPlayer[player] = killsPerPlayer[player] + 1;
+              if (player != deadPlayer) {
+                killsPerPlayer[player] = killsPerPlayer[player] + 1;
+              }              
+              if (killsPerPlayer[deadPlayer] == undefined) {
+                players.push(deadPlayer);
+                killsPerPlayer[deadPlayer] = 0;
+              }             
             } else {
               killsPerPlayer[player] = 1;
               players.push(player);
+              if (killsPerPlayer[deadPlayer] == undefined) {
+                killsPerPlayer[deadPlayer] = 0;
+                players.push(deadPlayer);
+              }     
             }
 
             var deathCause = stepOfGame.split(": ")[2].split(" by")[1].trim();
